@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
-  return (<footer className="bg-gray-900 px-2 py-12 flex flex-col items-center justify-between relative gap-8 md:flex-row">
+  return (<footer className="bg-gray-900 px-2 py-12 flex flex-col items-center justify-between relative gap-8 md:flex-row lg:px-16">
     <Image src={iconwhite} width={150} height={80} alt="" />
     <div className="flex gap-8">
     <Link href="https://www.tiktok.com/@motorepuestos_yara" className="w-8 aspect-square bg-white rounded p-1">
