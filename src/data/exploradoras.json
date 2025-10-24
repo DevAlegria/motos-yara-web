@@ -1,55 +1,55 @@
 [{
     "id": 1,
     "title": "Buho",
-    "price": 1500,
+    "price": 42000,
     "imageUrl": "/images/exploradoras/BUHO.png"
 },
 {
     "id": 2,
     "title": "Cuadrada",
-    "price": 1800,
+    "price": 42000,
     "imageUrl": "/images/exploradoras/CUADRADA.png"
 },
 {
     "id": 3,
     "title": "Lineal federal",
-    "price": 2000,
+    "price": 42000,
     "imageUrl": "/images/exploradoras/LINEAL_FEDERAL.png"
 },
 {
     "id": 4,
     "title": "Mini driving + run",
-    "price": 1700,
+    "price": 46000,
     "imageUrl": "/images/exploradoras/MINI_DRIVING_RUN.png"
 },
 {
     "id": 5,
     "title": "Ojo de diablo",
-    "price": 1600,
+    "price": 62000,
     "imageUrl": "/images/exploradoras/OJO_DE_DIABLO.png"
 },
 {
     "id": 6,
     "title": "SD-01",
-    "price": 1900,
+    "price": 45000,
     "imageUrl": "/images/exploradoras/SD-01.png"
 },
 {
     "id": 7,
     "title": "SD-02",
-    "price": 2100,
+    "price": 60000,
     "imageUrl": "/images/exploradoras/SD-02.png"
 },
 {
     "id": 8,
     "title": "Spotlight",
-    "price": 2200,
+    "price": 54000,
     "imageUrl": "/images/exploradoras/SPOTLIGHT.png"
 },
 {
     "id": 9,
-    "title": "Walle",
-    "price": 2300,
+    "title": "Walle x2",
+    "price": 75000,
     "imageUrl": "/images/exploradoras/WALLE.png"
 }
 ]
