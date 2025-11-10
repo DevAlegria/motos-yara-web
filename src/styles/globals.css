@@ -3,4 +3,13 @@
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    /* Font size */
+    --text-title: 24px;
+    --text-title--font-weight: 600;
+    --text-title--leading: 32px;
+
+    --text-button: 16px;
+    --text-button--font-weight: 400;
+    --text-button--leading: 24px;
 }
