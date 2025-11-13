@@ -1,7 +1,6 @@
 export default function CategoriesPage() {
   return (
-    <div>
-      <h1>Categories</h1>
+    <div className="flex flex-col items-center justify-center gap-4 text-sm">
     </div>
   );
 }
