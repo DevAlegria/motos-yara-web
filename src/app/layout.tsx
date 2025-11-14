@@ -1,11 +1,11 @@
 import "@/styles/globals.css";
-import { Geist, Poppins } from "next/font/google";
+import { Geist } from "next/font/google";
 import { TRPCReactProvider } from "@/trpc/react";
 
-const poppins = Poppins({
+const poppins = Geist({
   subsets: ["latin"],
   variable: "--font-poppins",
-  weight: ["300", "500", "600", "700"],
+  weight: ["400", "700"],
 });
 
 export default function RootLayout({
