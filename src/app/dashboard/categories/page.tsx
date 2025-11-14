@@ -1,6 +1,15 @@
+import { NewCategory } from "./NewCategory";
+
+
 export default function CategoriesPage() {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 text-sm">
-    </div>
+    <main className="p-4 space-y-6">
+      <NewCategory />
+      <div className="shadow-md rounded p-4">
+       <ul>
+        <li>No selecionado</li>
+       </ul>
+      </div>
+    </main>
   );
 }
