@@ -1,8 +1,6 @@
 "use client";
 
-import Button from "@/app/_components/atoms/Button";
 import { IconButton } from "@/app/_components/atoms/icons";
-import { AngleLeftIcon } from "@/assets/icons";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -18,10 +16,8 @@ export default function DashboardNavBar() {
       <h1 className="text-[20px] font-medium absolute left-1/2 transform -translate-x-1/2">Dashboard</h1>
     </div>
 
-    <div className={`fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform ${isOpen ? "translate-x-0" : "-translate-x-full"} w-64 bg-background-200`}>
-      <button onClick={handleIsOpen} className="w-10 aspect-square mb-4 hover:bg-gray-700 rounded" type="button">
-        <AngleLeftIcon />
-      </button>
+    <div className={`fixed top-0 left-0 z-40 h-screen py-4 px-2 overflow-y-auto transition-transform ${isOpen ? "translate-x-0" : "-translate-x-full"} w-64 bg-background-200`}>
+      <IconButton name="angleLeft" size={32} onClick={handleIsOpen} className="p-0.5" />
       <nav className="text-background-950 text-button">
         <ul className="flex flex-col gap-2">
           <li>
