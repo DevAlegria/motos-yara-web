@@ -26,7 +26,7 @@ const SIZE_CLASSES: Record<Size, string> = {
 };
 
 const BASE_CLASSES =
-  "inline-flex items-center justify-center gap-2 rounded-md transition duration-150 ease-linear select-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500";
+  "inline-flex items-center justify-center gap-2 rounded-md transition duration-150 ease-linear select-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50";
 
 const DISABLED_CLASSES = "opacity-60 pointer-events-none";
 
