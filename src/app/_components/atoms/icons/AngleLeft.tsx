@@ -15,6 +15,6 @@ export function AngleLeftIcon(props: SVGProps<SVGSVGElement>) {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
-      d="m15 19-7-7 7-7" />
+      d="m14 19-7-7 7-7" />
   </svg>;
 }
