@@ -1,15 +1,16 @@
+import { ListCategories } from "./ListCategories";
 import { NewCategory } from "./NewCategory";
-
+import { api, HydrateClient } from "@/trpc/server";
 
 export default function CategoriesPage() {
+  void api.category.getAll.prefetch();
+
   return (
-    <main className="p-4 space-y-6">
-      <NewCategory />
-      <div className="shadow-md rounded p-4">
-       <ul>
-        <li>No selecionado</li>
-       </ul>
-      </div>
-    </main>
+    <HydrateClient>
+      <main className="p-4 space-y-6">
+        <NewCategory />
+        <ListCategories />
+      </main>
+    </HydrateClient>
   );
 }
