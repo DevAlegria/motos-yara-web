@@ -22,19 +22,27 @@ export const categoryRouter = createTRPCRouter({
         name: z.string().min(3),
         description: z.string().optional(),
         parentId: z.number().optional(),
+        children: z.array(z.object({
+            name: z.string().min(3),
+            description: z.string().optional(),
+        })).optional(),
     }))
-    .mutation(async ({ctx, input}) => {
-        return await ctx.db.category.create(({
-            data: {
-                name: input.name,
-                description: input.description,
-                parentId: input.parentId,
-            },
-        }));
-    }),
-    getAll: publicProcedure.query(async ({ctx}) => {
+        .mutation(async ({ ctx, input }) => {
+            return await ctx.db.category.create(({
+                data: {
+                    name: input.name,
+                    description: input.description,
+                    parentId: input.parentId,
+                    children: input.children ? { createMany: {
+                        data: input.children,
+                    } } : undefined,
+                },
+            }));
+        }),
+    getAll: publicProcedure.query(async ({ ctx }) => {
         const categories = await ctx.db.category.findMany({
-        orderBy: { name: "asc" },
+            orderBy: { name: "asc" },where: { parentId: null },
+            include: { children: true },
         });
         return categories;
     })
