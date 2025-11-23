@@ -53,7 +53,7 @@ export function NewCategory() {
     {Number.isInteger(category.parentId) ? <div className="flex gap-4">
       <select onChange={(e) => handleCategory("parentId", Number(e.target.value))} className="flex-1" name="parentCategory" id="parentCategory" defaultValue={0} value={category.parentId ?? 0 }>
         <option value="0" >No Seleccionado</option>
-        {categories && categories.map(cat => {
+        {categories?.map(cat => {
           if (cat.id === 1) return null;
           return <option key={cat.id} value={cat.id}>{cat.name}</option>
         })}

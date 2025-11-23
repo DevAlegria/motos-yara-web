@@ -31,7 +31,13 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       (el: HTMLTextAreaElement) => {
         innerRef.current = el;
         if (typeof forwardedRef === "function") forwardedRef(el);
-        else if (forwardedRef) (forwardedRef as React.RefObject<HTMLTextAreaElement | null>).current = el;
+        else if (
+          forwardedRef &&
+          typeof forwardedRef === "object" &&
+          "current" in forwardedRef
+        ) {
+          (forwardedRef as React.RefObject<HTMLTextAreaElement>).current = el;
+        }
         updateTextAreaSize(el);
       },
       [forwardedRef]

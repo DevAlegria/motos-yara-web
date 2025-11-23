@@ -5,7 +5,7 @@ export function ListCategories() {
   const [ categories ] =  api.category.getAll.useSuspenseQuery();
 console.log(categories);
   return <ul className="shadow-md rounded p-4">
-    {categories && categories.map(category => (
+    {categories?.map(category => (
       <li key={category.id} className="border-b last:border-0 py-2">
         {category.name}
         {category.description && <p className="text-sm text-gray-600">{category.description}</p>}
