@@ -24,7 +24,7 @@ const initialCategory: NewCategoryProps = {
 
 export function NewCategory() {
   const [category, setCategory] = useState<NewCategoryProps>(initialCategory);
-  const [categories] = api.category.getAll.useSuspenseQuery();
+  const { data: categories } = api.category.getAll.useQuery();
   const utils = api.useUtils();
   const createCategory = api.category.create.useMutation({
     onSuccess: async () => {

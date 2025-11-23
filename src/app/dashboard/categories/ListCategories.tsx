@@ -2,7 +2,7 @@
 import { api } from "@/trpc/react";
 
 export function ListCategories() {
-  const [ categories ] =  api.category.getAll.useSuspenseQuery();
+  const  { data: categories }  =  api.category.getAll.useQuery();
 console.log(categories);
   return <ul className="shadow-md rounded p-4">
     {categories?.map(category => (
