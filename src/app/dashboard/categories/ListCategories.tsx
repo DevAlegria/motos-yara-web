@@ -3,7 +3,7 @@ import { api } from "@/trpc/react";
 
 export function ListCategories() {
   const  { data: categories }  =  api.category.getAll.useQuery();
-console.log(categories);
+
   return <ul className="shadow-md rounded p-4">
     {categories?.map(category => (
       <li key={category.id} className="border-b last:border-0 py-2">
