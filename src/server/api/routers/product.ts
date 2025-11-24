@@ -4,7 +4,13 @@ import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 
 export const productRouter = createTRPCRouter({
   create: publicProcedure
-    .input(z.object({ name: z.string(), price: z.number(), description: z.string(), imageUrl: z.string().optional(), categoryId: z.number() }))
+    .input(z.object({
+      name: z.string(),
+      price: z.number(),
+      description: z.string(),
+      imageUrl: z.string().optional(),
+      categoryId: z.number()
+    }))
     .mutation(async ({ ctx, input }) => {
       return ctx.db.product.create({
         data: {
@@ -13,10 +19,13 @@ export const productRouter = createTRPCRouter({
           description: input.description,
           categoryId: input.categoryId,
           reference: `PROD-${Date.now()}`,
+          images: { createMany: { data: [{ url: input.imageUrl ?? "", order: 1 }] } },
         },
       });
     }),
-    getAll: publicProcedure.query(async ({ ctx }) => {
-      return ctx.db.product.findMany();
-    }),
+  getAll: publicProcedure.query(async ({ ctx }) => {
+    return ctx.db.product.findMany({include: { images: true }});
+
+    
+  }),
 });
