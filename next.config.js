@@ -7,7 +7,24 @@ import "./src/env.js";
 /** @type {import("next").NextConfig} */
 const config = {
   images: {
-    domains: ["images.unsplash.com", "plus.unsplash.com", "res.cloudinary.com", "ljugsztbbrllwhdzdcou.supabase.co"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "plus.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+      {
+        protocol: "https",
+        hostname: "ljugsztbbrllwhdzdcou.supabase.co",
+      },
+    ],
   },
 };
 
