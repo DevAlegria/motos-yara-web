@@ -25,7 +25,32 @@ export const productRouter = createTRPCRouter({
     }),
   getAll: publicProcedure.query(async ({ ctx }) => {
     return ctx.db.product.findMany({include: { images: true }});
+  }),
+  getList: publicProcedure.query(async ({ ctx }) => {
+     const data = await ctx.db.product.findMany({
+      include: { images: {select:{url : true}}, category: {select: {name: true, id: true}} },
+    });
 
+    return data.map(product=> ({
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        imageUrl: product.images[0]?.url ?? "",
+        price: product.price,
+        inStock: product.inStock,
+        category: product.category
+      }));
     
   }),
+  setStockStatus: publicProcedure
+    .input(z.object({
+      productId: z.number(),
+      inStock: z.boolean()
+    }))
+    .mutation(async ({ ctx, input }) => {
+      return ctx.db.product.update({
+        where: { id: input.productId },
+        data: { inStock: input.inStock }
+      });
+    }),
 });
