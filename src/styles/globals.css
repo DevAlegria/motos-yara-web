@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Fonts */
+  --font-ethnocentric: var(--font-ethnocentric), sans-serif;
+  --font-oxanium: var(--font-oxanium), sans-serif;
+  --font-poppins: var(--font-poppins), sans-serif;
 
   /* Font size */
   --text-title: 24px;
