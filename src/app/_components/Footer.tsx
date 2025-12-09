@@ -11,15 +11,15 @@ export default function Footer() {
     <div className="flex flex-col gap-4">
       <div className="flex gap-4">
         <IconButton name="envelope" className="hover:bg-transparent scale-110" />
-        <p><span className="font-oxanium font-bold block -mb-2">Correo:</span> contacto@motorepuestosyara.com</p>
+        <p><span className="font-oxanium font-bold block -mb-2">Correo:</span> repuestos.yara@gmail.com</p>
       </div>
       <div className="flex gap-4">
         <IconButton name="phone" className="hover:bg-transparent scale-125" />
-        <p><span className="font-oxanium font-bold block -mb-2">Telefono:</span>321 675 2345</p>
+        <p><span className="font-oxanium font-bold block -mb-2">Telefono:</span>312 871 9041</p>
       </div>
       <div className="flex gap-4">
         <IconButton name="mapPin" className="hover:bg-transparent scale-125" />
-        <p><span className="font-oxanium font-bold block -mb-2">Direccion:</span> Calle 123, Ciudad, País</p>
+        <p><span className="font-oxanium font-bold block -mb-2">Direccion:</span> Calle 15 # 4 - 78, Caloto, Cauca</p>
       </div>
     </div>
     <div className="h-0.5 bg-background-50 w-5/6 rounded self-center shadow-lg shadow-black lg:hidden"></div>
