@@ -22,7 +22,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${ethnocentric.variable} ${oxanium.variable} ${poppins.variable}`}>
-      <body className="h-screen flex flex-col font-poppins">
+      <body className="min-h-screen font-poppins">
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>

@@ -12,9 +12,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const VARIANT_CLASSES: Record<Variant, string> = {
   primary:
-    "bg-primary-600 text-white border border-transparent hover:bg-primary-700 active:scale-95 focus:ring-transparent",
+    "bg-primary text-white border border-transparent hover:bg-primary-700 active:scale-95 focus:ring-transparent",
   secondary:
-    "bg-transparent text-primary-600 border border-primary-600 hover:bg-primary-50 active:scale-95 focus:ring-transparent",
+    "bg-transparent text-primary border border-primary hover:bg-primary-50 active:scale-95 focus:ring-transparent",
     tertiary:
     "text-text hover:bg-background-100 focus:ring-transparent",
 };
