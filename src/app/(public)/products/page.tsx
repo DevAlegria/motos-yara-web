@@ -2,6 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import { api } from "@/trpc/react";
 import Image from "next/image";
+import { Suspense } from "react";
 
 
 export default function ProductsPage() {
@@ -14,9 +15,11 @@ export default function ProductsPage() {
     <main className="w-full flex flex-col items-center gap-6 p-4 min-h-screen">
       <h1 className="font-ethnocentric text-2xl">{category}</h1>
       <p className="text-background-800">{"Iluminación que te permite ver y ser visto."}</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full px-4">
-        {products?.map(product => <ProductCard key={product.id} {...product} />)}
-      </div>
+      <Suspense fallback={<p>Cargando productos...</p>}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full px-4">
+          {products?.map(product => <ProductCard key={product.id} {...product} />)}
+        </div>
+      </Suspense>
     </main>
   );
 }
@@ -30,11 +33,11 @@ type CardProductProps = {
   category: { name: string; id: number; };
 };
 
-function ProductCard({ id, name, description, price, imageUrl, inStock}: CardProductProps) {
+function ProductCard({ id, name, description, price, imageUrl, inStock }: CardProductProps) {
   return <div className="shadow-lg w-full relative">
     {
       !inStock &&
-    <span className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-3 py-2 rounded tracking-widest uppercase">Agotado</span>
+      <span className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-3 py-2 rounded tracking-widest uppercase">Agotado</span>
     }
     <Image src={imageUrl} alt="" className="w-full object-cover" width={192} height={192} />
     <div className="p-4">
