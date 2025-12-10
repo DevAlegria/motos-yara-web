@@ -1,22 +1,41 @@
 import { FacebookIcon, InstagramIcon, TiktokIcon } from "@/assets/icons";
-import { iconwhite } from "@/assets/logo";
+import { yaraLogo } from "@/assets/logo";
 import Image from "next/image";
 import Link from "next/link";
+import { IconButton } from "./atoms/icons";
 
 export default function Footer() {
-  return (<footer className="bg-gray-900 px-2 py-12 flex flex-col items-center justify-between relative gap-8 md:flex-row lg:px-16">
-    <Image src={iconwhite} width={150} height={80} alt="" />
-    <div className="flex gap-8">
-    <Link href="https://www.tiktok.com/@motorepuestos_yara" className="w-8 aspect-square bg-white rounded p-1">
-      <TiktokIcon />
-    </Link>
-    <Link href="https://web.facebook.com/people/Moto-Repuestos-Yara/61554632012488/" className="w-8 aspect-square bg-white rounded">
-      <FacebookIcon />
-    </Link>
-    <Link href="https://www.instagram.com/motorepuestos_yara/" className="w-8 aspect-square bg-white rounded">
-      <InstagramIcon />
-    </Link>
+  return (<footer className="bg-background-950 px-8 py-16 gap-8 flex flex-col text-background-50 lg:flex-row lg:justify-around lg:items-start">
+
+    <Image className="" src={yaraLogo} width={140} height={32} alt="" />
+    <div className="flex flex-col gap-4">
+      <div className="flex gap-4">
+        <IconButton name="envelope" className="hover:bg-transparent scale-110" />
+        <p><span className="font-oxanium font-bold block -mb-2">Correo:</span> repuestos.yara@gmail.com</p>
+      </div>
+      <div className="flex gap-4">
+        <IconButton name="phone" className="hover:bg-transparent scale-125" />
+        <p><span className="font-oxanium font-bold block -mb-2">Telefono:</span>312 871 9041</p>
+      </div>
+      <div className="flex gap-4">
+        <IconButton name="mapPin" className="hover:bg-transparent scale-125" />
+        <p><span className="font-oxanium font-bold block -mb-2">Direccion:</span> Calle 15 # 4 - 78, Caloto, Cauca</p>
+      </div>
     </div>
-    <span className="absolute bottom-0 right-1 text-gray-400">By yhonier.alegria@gmail.com</span>
+    <div className="h-0.5 bg-background-50 w-5/6 rounded self-center shadow-lg shadow-black lg:hidden"></div>
+    <div className="flex flex-col gap-4 items-center">
+      <p className="font-oxanium font-bold">Siguenos</p>
+      <div className="flex gap-6">
+        <Link href="https://www.tiktok.com/@motorepuestos_yara" className="w-8 aspect-square bg-white rounded p-1">
+          <TiktokIcon />
+        </Link>
+        <Link href="https://web.facebook.com/people/Moto-Repuestos-Yara/61554632012488/" className="w-8 aspect-square bg-white rounded">
+          <FacebookIcon />
+        </Link>
+        <Link href="https://www.instagram.com/motorepuestos_yara/" className="w-8 aspect-square bg-white rounded">
+          <InstagramIcon />
+        </Link>
+      </div>
+    </div>
   </footer>);
 }  

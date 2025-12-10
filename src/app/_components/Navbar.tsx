@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { icon, iconPhone, iconwhite } from "@/assets/logo/index";
+import { yaraLogo } from "@/assets/logo/index";
+import { IconButton } from "./atoms/icons";
 
 
 export default function Navbar() {
-    return (<nav className="px-2 py-4 uppercase shadow">
-        <Image className="hidden" src={icon} width={100} height={200} alt="" />
-        <Image className="" src={iconPhone} width={60} height={60} alt="" />
+    return (<nav className="p-6 shadow flex justify-between items-center text-actions sticky top-0 bg-background-50/60 backdrop-blur-md z-50">
+        <Image className="" src={yaraLogo} width={140} height={32} alt="" />
+        <IconButton name="search" size={32} className="p-1 text-action"/>
     </nav>);
 }

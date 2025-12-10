@@ -6,7 +6,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
 }
 
-export function IconButton({ name, size = 20, className = "", ...props }: IconProps) {
+export function IconButton({ name, size = 24, className = "", ...props }: IconProps) {
   const Component = icons[name];
   if (!Component) return null;
 
@@ -14,7 +14,7 @@ export function IconButton({ name, size = 20, className = "", ...props }: IconPr
     <Component
       width={size}
       height={size}
-      className={`inline-block focus:bg-background-100 hover:bg-background-100 rounded ${className}`}
+      className={`inline-block focus:bg-background-100 hover:bg-background-100 rounded p-0.5 ${className}`}
       {...props}
     />
   );

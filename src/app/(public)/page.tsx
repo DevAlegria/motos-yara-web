@@ -1,23 +1,26 @@
 import { api, HydrateClient } from "@/trpc/server";
 import Link from "next/link";
+import Button from "../_components/atoms/Button";
 
 export default async function Home() {
   return (
     <HydrateClient>
-      <main className="flex-1 flex flex-col items-center justify-center gap-4">
-        <Link className=" text-[#090909]
-        py-[0.7em]
-        px-[1.7em]
-        text-[18px]
-        rounded-md
-        bg-[#e8e8e8]
-        border border-[#e8e8e8]
-        transition-all
-        duration-300
-        shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff]
-        hover:border-white
-        active:shadow-[4px_4px_12px_#c5c5c5,-4px_-4px_12px_#ffffff]" href="/exploradoras">Ver Exploradoras</Link>
+      <main className="w-full flex flex-col items-center gap-6 p-4 h-screen">
+        <Card />
       </main>
     </HydrateClient>
   );
 }
+
+function Card() {
+  return (
+    <div
+    className="shadow-2xl bg-cover bg-center w-full min-h-[378px] h-full px-6 py-14 flex flex-col items-start justify-end gap-4 md:px-12 md:py-24 md:gap-10"
+      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1596687760372-4c0d266059a7?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')` }}>
+      <h2 className="font-ethnocentric text-background-50 text-lg md:text-3xl">Iluminacion</h2>
+      <p className="text-background-100 md:text-xl md:-mt-4">Lo mejor en iluminacion para tu moto </p>
+      <Link  href="/products?category=iluminacion"><Button className="font-oxanium font-bold pointer-events-none md:text-xl" variant="primary">Conocer Productos</Button></Link>
+       
+    </div>
+  );
+} 

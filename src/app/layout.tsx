@@ -1,19 +1,28 @@
 import "@/styles/globals.css";
-import { Geist } from "next/font/google";
+import localFont from "next/font/local";
 import { TRPCReactProvider } from "@/trpc/react";
 
-const poppins = Geist({
-  subsets: ["latin"],
+
+const ethnocentric = localFont({
+  src: "../../public/fonts/EthnocentricRg.otf",
+  variable: "--font-ethnocentric",
+});
+
+const oxanium = localFont({
+  src: "../../public/fonts/Oxanium.ttf",  
+  variable: "--font-oxanium",
+});
+const poppins = localFont({
+  src: [{path: "../../public/fonts/Poppins-Regular.ttf", weight: "400"},],  
   variable: "--font-poppins",
-  weight: ["400", "700"],
 });
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${poppins.variable}}`}>
-      <body className="h-screen flex flex-col">
+    <html lang="en" className={`${ethnocentric.variable} ${oxanium.variable} ${poppins.variable}`}>
+      <body className="min-h-screen font-poppins">
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
